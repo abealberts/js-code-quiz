@@ -16,13 +16,29 @@
             <h3>(...or maybe kind of just a normal one)</h3>
         </header>
 
-        <section class="quiz">
+        <!-- START QUIZ STATE -->
+        <section class="quiz" id="startQuiz" data-state="visible" data-state="hidden">
           <section class="quiz-topper">
             <div class="highscores">
               <h3>Highscores</h3>
             </div>
             <div class="timer">
-              <h3 id="timer">timer-value</h3>
+              <h3 id="timer">Get Ready!</h3>
+            </div>
+          </section>
+          <section class="startButton">
+            <h3>Start Quiz</h3>
+          </section>
+        </section>
+
+        <!-- QUIZ ACTIVE STATE -->
+        <section class="quiz" id="activeQuiz" data-state="visible" data-state="hidden">
+          <section class="quiz-topper">
+            <div class="highscores">
+              <h3>Highscores</h3>
+            </div>
+            <div class="timer">
+              <h3 id="timer">75</h3>
             </div>
           </section>
           <section class="question-container">
@@ -44,7 +60,9 @@
             <h3>Correct!</h3>
           </section>
         </section>
+
     </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 	<script src="./Assets/js/script.js"></script>
   </body>
 </html>

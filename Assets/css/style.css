@@ -56,6 +56,10 @@ header {
     /* border: solid 1px var(--black); */
 }
 
+#activeQuiz {
+    display: none;
+}
+
 /* container for 'highscores' and the timer */
 .quiz-topper {
     display: flex;
@@ -166,4 +170,29 @@ header {
 
     border: solid 2pt var(--green);
     border-radius: 10px;
+}
+
+.startButton {
+    margin-top: 48px;
+
+    display: flex;
+    justify-content: center;
+
+    /* border: solid 1px var(--black); */
+}
+.startButton h3{
+    min-width: 40%;
+
+    font-weight: 400;
+    text-align: center;
+
+    border: solid 2pt var(--green);
+    border-radius: 10px;
+}
+
+.startButton h3:hover {
+    cursor: pointer;
+
+    background-color: var(--green);
+    color: var(--white);
 }
