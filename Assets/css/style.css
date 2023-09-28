@@ -1,0 +1,169 @@
+:root {
+    --black: #0C120C;
+    --grey: #6D7275;
+    --white: #FFFFFB;
+    --red: #FE654F;
+    --yellow: #FFC145;
+    --green: #98D650;
+}
+
+* {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 4px;
+}
+
+html {
+    background-color: var(--white);
+}
+
+h1 {
+    font-size: 36pt;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 24pt;
+    font-weight: 400;
+    padding: 12px;
+}
+
+h3 {
+    font-size: 18pt;
+    font-weight: 300;
+    padding: 12px;
+}
+
+header {
+    min-height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* border: solid 1px var(--black); */
+}
+
+/* main container for quiz elements */
+.quiz {
+    max-width: 80%;
+
+    margin: 4px auto;
+
+    display: flex;
+    flex-direction: column;
+
+    /* border: solid 1px var(--black); */
+}
+
+/* container for 'highscores' and the timer */
+.quiz-topper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: center;
+    align-self: center;
+
+    width: 80%;
+
+    /* border: solid 1px var(--black); */
+}
+
+.highscores {
+    min-width: 200px;
+
+    text-align: center;
+
+    border: solid 2pt var(--grey);
+    border-radius: 10px;
+}
+
+.highscores h3 {
+    padding: 12px;
+    font-weight: 400;
+}
+
+.highscores:hover,
+.highscores h3:hover {
+    cursor: pointer;
+
+    background-color: var(--grey);
+    color: var(--white);
+}
+
+.timer {
+    min-width: 200px;
+
+    text-align: center;
+
+    border: solid 2pt var(--green);
+    border-radius: 10px;
+}
+
+.timer h3 {
+    padding: 12px;
+    font-weight: 400;
+}
+
+/* container for questions and answers */
+.question-container {
+    margin-top: 48px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* border: solid 1px var(--black); */
+}
+
+.question {
+    margin-bottom: 24px;
+
+    max-width: 80%;
+
+    text-align: left;
+
+    border-bottom: solid 2px var(--grey);
+
+    /* border: solid 1px var(--black); */
+}
+
+/* divs containing question answers */
+.answer {
+    min-width: 80%;
+
+    border: solid 2pt var(--red);
+    border-radius: 10px;
+}
+
+.answer:hover,
+.answer h3:hover {
+    cursor: pointer;
+
+    background-color: #FE654F;
+    color: var(--white);
+}
+
+/* for the 'correct!' display message */
+.correct-indicator {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+
+    text-align: center;
+
+    /* border: solid 1px var(--black); */
+}
+
+.correct-indicator h3 {
+    color: var(--green);
+
+    font-weight: 400;
+
+    min-width: 40%;
+
+    border: solid 2pt var(--green);
+    border-radius: 10px;
+}
