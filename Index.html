@@ -22,8 +22,8 @@
             <div class="highscores">
               <h3>Highscores</h3>
             </div>
-            <div class="timer">
-              <h3 id="timer">Get Ready!</h3>
+            <div class="timerGreen">
+              <h3>Get Ready!</h3>
             </div>
           </section>
           <section class="startButton">
@@ -34,30 +34,101 @@
         <!-- QUIZ ACTIVE STATE -->
         <section class="quiz" id="activeQuiz" data-state="visible" data-state="hidden">
           <section class="quiz-topper">
-            <div class="highscores">
+            <div class="highscores" id="highscoresBtn">
               <h3>Highscores</h3>
             </div>
-            <div class="timer">
+            <div  class="timerGreen" id="timerContainer">
               <h3 id="timer">75</h3>
             </div>
           </section>
-          <section class="question-container">
+
+          <section class="questionContainer" id="q1">
             <h2 class="question">If I was a semi-pro wrestler, a really cool stage name would be:</h2>
-            <div class="answer" id="1">
-              <h3>Beef Mallet</h3>
+            <div class="answer">
+              <h3 class="answerChild" data-state="correct">Beef Mallet</h3>
             </div>
-            <div class="answer" id="2">
-              <h3>Pork Hammer</h3>
+            <div class="answer">
+              <h3 class="answerChild" data-state="wrong">Pork Hammer</h3>
             </div>
-            <div class="answer" id="3">
-              <h3>Chuck Cudgel</h3>
+            <div class="answer">
+              <h3 class="answerChild" data-state="wrong">Chuck Cudgel</h3>
             </div>
-            <div class="answer" id="4">
-              <h3>Meat Maul</h3>
+            <div class="answer">
+              <h3 class="answerChild" data-state="wrong">Meat Maul</h3>
             </div>
           </section>
+
+          <section class="questionContainer" id="q2">
+            <h2 class="question">If I was to have an arch-rival in the semi-pro wrestling scene, my opponents name would be:</h2>
+            <div class="answer">
+              <h3 class="answerChild" data-state="wrong">Beef Mallet</h3>
+            </div>
+            <div class="answer">
+              <h3 class="answerChild" data-state="correct">Pork Hammer</h3>
+            </div>
+            <div class="answer">
+              <h3 class="answerChild" data-state="wrong">Chuck Cudgel</h3>
+            </div>
+            <div class="answer">
+              <h3 class="answerChild" data-state="wrong">Meat Maul</h3>
+            </div>
+          </section>
+
+          <section class="questionContainer" id="q3">
+            <h2 class="question">My small wrestling companion that crawls out from underneath the stage would be named:</h2>
+            <div class="answer">
+              <h3 class="answerChild" data-state="wrong">Beef Mallet</h3>
+            </div>
+            <div class="answer">
+              <h3 class="answerChild" data-state="wrong">Pork Hammer</h3>
+            </div>
+            <div class="answer">
+              <h3 class="answerChild" data-state="correct">Chuck Cudgel</h3>
+            </div>
+            <div class="answer">
+              <h3 class="answerChild" data-state="wrong">Meat Maul</h3>
+            </div>
+          </section>
+
+          <section class="questionContainer" id="q4">
+            <h2 class="question">After my wrestling villain arc, I would rebrand and my name would:</h2>
+            <div class="answer">
+              <h3 class="answerChild" data-state="wrong">Beef Mallet</h3>
+            </div>
+            <div class="answer">
+              <h3 class="answerChild" data-state="wrong">Pork Hammer</h3>
+            </div>
+            <div class="answer">
+              <h3 class="answerChild" data-state="wrong">Chuck Cudgel</h3>
+            </div>
+            <div class="answer">
+              <h3 class="answerChild" data-state="correct">Meat Maul</h3>
+            </div>
+          </section>
+
+          <section class="questionContainer" id="quizEnd">
+            <h2 class="question">You've completed the quiz! You answered <span id="quizScore"></span> questions correctly and had <span id="secondsLeft"></span> seconds remaining!</h2>
+            <div class="answer">
+              <form action="" id="scoreSubmit">
+                <input type="text" placeholder="Initials" value="" id="initials">
+                <input type="submit" value="Submit Score">
+              </form>
+            </div>
+          </section>
+
+          <section class="questionContainer" id="highscores">
+            <h2 class="question">Highscores:</h2>
+            <div class="answer">
+              <ul id="highscoreList"></ul>
+            </div>
+            <button id="backBtn">Back</button>
+          </section>
+
           <section class="correct-indicator">
             <h3>Correct!</h3>
+          </section>
+          <section class="incorrect-indicator">
+            <h3>Incorrect...</h3>
           </section>
         </section>
 
