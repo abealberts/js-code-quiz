@@ -96,12 +96,32 @@ header {
     color: var(--white);
 }
 
-.timer {
+.timerGreen {
     min-width: 200px;
 
     text-align: center;
 
     border: solid 2pt var(--green);
+    border-radius: 10px;
+}
+
+/* styles border when timer < 45 seconds */
+.timerYellow {
+    min-width: 200px;
+
+    text-align: center;
+
+    border: solid 2pt var(--yellow);
+    border-radius: 10px;
+}
+
+/* styles border when timer runs out */
+.timerRed {
+    min-width: 200px;
+
+    text-align: center;
+
+    border: solid 2pt var(--red);
     border-radius: 10px;
 }
 
@@ -111,7 +131,7 @@ header {
 }
 
 /* container for questions and answers */
-.question-container {
+.questionContainer {
     margin-top: 48px;
 
     display: flex;
@@ -169,6 +189,26 @@ header {
     min-width: 40%;
 
     border: solid 2pt var(--green);
+    border-radius: 10px;
+}
+
+/* for the 'incorrect...' diplsay message */
+.incorrect-indicator {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.incorrect-indicator h3 {
+    color: var(--red);
+
+    font-weight: 400;
+
+    min-width: 40%;
+
+    border: solid 2pt var(--red);
     border-radius: 10px;
 }
 
