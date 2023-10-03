@@ -232,7 +232,7 @@ backBtn.addEventListener("click", function(){
 })
 
 // Adds event listeners to all questions
-questionsArray.forEach(function (element) {
+questionsArray.forEach(function(element) {
     element.addEventListener("click", function(event) {
         target = event.target;
         answer = target.getAttribute("data-state");
