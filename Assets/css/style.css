@@ -5,6 +5,7 @@
     --red: #FE654F;
     --yellow: #FFC145;
     --green: #98D650;
+    --blue: #3193e4;
 }
 
 * {
@@ -44,195 +45,270 @@ header {
     /* border: solid 1px var(--black); */
 }
 
-/* main container for quiz elements */
-.quiz {
-    max-width: 80%;
-
-    margin: 4px auto;
-
-    display: flex;
-    flex-direction: column;
-
-    /* border: solid 1px var(--black); */
-}
-
-#activeQuiz {
-    display: none;
-}
-
-/* container for 'highscores' and the timer */
-.quiz-topper {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-content: center;
-    align-self: center;
-
+/* section for highscores/time left/score */
+.subheader {
     width: 80%;
-
-    /* border: solid 1px var(--black); */
-}
-
-.highscores {
-    min-width: 200px;
-
-    text-align: center;
-
-    border: solid 2pt var(--grey);
-    border-radius: 10px;
-}
-
-.highscores h3 {
-    padding: 12px;
-    font-weight: 400;
-}
-
-.highscores:hover,
-.highscores h3:hover {
-    cursor: pointer;
-
-    background-color: var(--grey);
-    color: var(--white);
-}
-
-.timerGreen {
-    min-width: 200px;
-
-    text-align: center;
-
-    border: solid 2pt var(--green);
-    border-radius: 10px;
-}
-
-/* styles border when timer < 45 seconds */
-.timerYellow {
-    min-width: 200px;
-
-    text-align: center;
-
-    border: solid 2pt var(--yellow);
-    border-radius: 10px;
-}
-
-/* styles border when timer runs out */
-.timerRed {
-    min-width: 200px;
-
-    text-align: center;
-
-    border: solid 2pt var(--red);
-    border-radius: 10px;
-}
-
-.timer h3 {
-    padding: 12px;
-    font-weight: 400;
-}
-
-/* container for questions and answers */
-.questionContainer {
-    margin-top: 48px;
-
+    margin: auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    /* border: solid 1px var(--black); */
+    justify-content: space-between;
 }
 
-.question {
-    margin-bottom: 24px;
+.subheader-item{
+    min-width: 30%;
+    padding: 8px;
 
-    max-width: 80%;
+    font-size: 16pt;
+    text-align: center;
+
+    border: solid 2px var(--grey);
+    border-radius: 8px;
+}
+
+.start-state{
+    display: flex;
+    justify-content: center;
+}
+
+/* styles answer selections */
+.answer-btn {
+    background: var(--white);
 
     text-align: left;
 
-    border-bottom: solid 2px var(--grey);
+    color: var(--black);
 
-    /* border: solid 1px var(--black); */
-}
+    padding: 10px;
+    margin: 10px 8px;
+    width: 90%;
 
-/* divs containing question answers */
-.answer {
-    min-width: 80%;
+    border: 2px solid var(--blue);
+    border-radius: 8px;
 
-    border: solid 2pt var(--red);
-    border-radius: 10px;
-}
-
-.answer:hover,
-.answer h3:hover {
     cursor: pointer;
 
-    background-color: #FE654F;
+    transition: all 0.3s;
+}
+
+/* answers hover style when not disabled */
+.answer-btn:hover:not([disabled]){
+    background: var(--blue);
     color: var(--white);
 }
 
-/* for the 'correct!' display message */
-.correct-indicator {
-    margin-top: 24px;
-    display: flex;
-    justify-content: center;
-
-    text-align: center;
-
-    /* border: solid 1px var(--black); */
+/* answers style when disabled */
+.answer-btn:disabled{
+    cursor: default;
 }
 
-.correct-indicator h3 {
-    color: var(--green);
-
-    font-weight: 400;
-
-    min-width: 40%;
-
-    border: solid 2pt var(--green);
-    border-radius: 10px;
-}
-
-/* for the 'incorrect...' diplsay message */
-.incorrect-indicator {
-    margin-top: 24px;
-    display: flex;
-    justify-content: center;
-
-    text-align: center;
-}
-
-.incorrect-indicator h3 {
-    color: var(--red);
-
-    font-weight: 400;
-
-    min-width: 40%;
-
-    border: solid 2pt var(--red);
-    border-radius: 10px;
-}
-
-.startButton {
-    margin-top: 48px;
-
-    display: flex;
-    justify-content: center;
-
-    /* border: solid 1px var(--black); */
-}
-.startButton h3{
-    min-width: 40%;
-
-    font-weight: 400;
-    text-align: center;
-
-    border: solid 2pt var(--green);
-    border-radius: 10px;
-}
-
-.startButton h3:hover {
-    cursor: pointer;
-
+/* this class gets added to correct answers */
+.correct {
     background-color: var(--green);
+
+    border: 2px solid var(--green);
+    border-radius: 8px;
+}
+
+/* this class gets added to incorrect answers */
+.incorrect {
+    background: var(--red);
+
+    border: 2px solid var(--red);
+    border-radius: 8px;
+}
+
+.highscore-entry {
+    background: var(--white);
+
+    text-align: left;
+
+    color: var(--black);
+
+    padding: 10px;
+    margin: 10px 8px;
+    width: 90%;
+
+    border: 2px solid var(--blue);
+    border-radius: 8px;
+}
+
+.highscore-entry{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.highscore-entry-data{
+    padding: 0px 8px;
+    font-size: 14pt;
+    font-weight: 400;
+    text-align: left;
+
+    width: 33.33%;
+
+    border-left: dotted 2px var(--blue);
+}
+
+/* contains most content */
+#highscore-board,
+#score-card,
+#quiz {
+    display: none;
+    flex-direction: column;
+
+    margin: auto;
+    margin-top: 16px;
+    width: 90%;
+
+    border: solid 2px #dddddd;
+    border-radius: 8px;
+}
+
+#highscores-header,
+#quiz-results,
+#question{
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 8px;
+}
+
+/* Container for question answers */
+#answer-buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#restart-btn2,
+#restart-btn,
+#next-btn{
+    background: var(--white);
+
+    text-align: center;
+
+    color: var(--black);
+
+    padding: 10px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 90%;
+
+    border: 2px solid var(--grey);
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: all 0.15s;
+}
+
+#restart-btn2:hover,
+#restart-btn:hover,
+#next-btn:hover{
+    background: var(--grey);
     color: var(--white);
+}
+
+#restart-btn{
+    display: none;
+}
+
+#highscores-btn{
+    background: var(--white);
+
+    text-align: center;
+
+    color: var(--black);
+
+    border: 2px solid var(--grey);
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: all 0.15s;
+}
+
+#highscores-btn:hover{
+    background: var(--grey);
+    color: var(--white);
+}
+
+#start-btn{
+    padding: 16px;
+    margin: 16px;
+
+    width: 80%;
+
+    font-size: 24pt;
+
+    background: var(--white);
+
+    text-align: center;
+
+    color: var(--blue);
+
+    border: 2px solid var(--blue);
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: all 0.15s;
+}
+
+#start-btn:hover{
+    background: var(--blue);
+    color: var(--white);
+}
+
+#timer{
+    border-color: var(--green);
+}
+
+
+#score-submit{
+    display: flex;
+    justify-content: center;
+}
+
+#score-submit input{
+    padding: 8px;
+    border-radius: 8px;
+}
+
+#initials-text-input{
+    border: solid 2px var(--grey);
+
+    transition: all 0.15s;
+}
+
+#initials-text-input:hover{
+    border-color: var(--black);
+}
+
+#initials-submit-input{
+    background-color: var(--white);
+
+    border: solid 2px var(--blue);
+
+    transition: all 0.15s;
+}
+
+#initials-submit-input:hover{
+    cursor: pointer;
+    color: var(--white);
+    background-color: var(--blue);
+}
+
+#submission-message{
+    display: none;
+    text-align: center;
+    margin: auto;
+
+    color: var(--grey);
+}
+
+#highscores{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
