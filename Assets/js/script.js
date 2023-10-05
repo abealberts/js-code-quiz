@@ -142,6 +142,7 @@ function showScore(){
     quizResultsEl.innerHTML = `You got ${score} out of ${questions.length} correct in ${timeTaken} seconds!`;
 };
 
+// determines whether to display next question or end game
 function handleNextButton(){
     currentQuestionIndex++;
     if(currentQuestionIndex < questions.length){
@@ -153,6 +154,7 @@ function handleNextButton(){
     }
 };
 
+// timer logic
 function startTimer() {
     var timerInterval = setInterval(function(){
         secondsLeft--;
@@ -188,6 +190,7 @@ function startTimer() {
     }, 1000);
 };
 
+// brings user back to initial state
 function returnToStart(){
     scoreCardEl.style.display = "none";
     highscoreBoardEl.style.display = "none";
@@ -197,6 +200,7 @@ function returnToStart(){
     scoreEl.innerHTML = "Score:";
 }
 
+// saves user score(s) to localstorage
 function saveScore(){
     var initials = document.getElementById("initials-text-input");
     var highscoreList = JSON.parse(localStorage.getItem("savedScores")) || [];
@@ -222,6 +226,7 @@ function saveScore(){
     };
 };
 
+// uses stored scores from localstorage to render in score cards on the highscore table
 function renderScores(){
     resetState();
 
@@ -252,6 +257,7 @@ function renderScores(){
     });
 }
 
+//brings user to the highscore table
 function viewHighscores(){
     gameEnd = true;
     secondsLeft = 76;
@@ -266,6 +272,7 @@ function viewHighscores(){
     renderScores();
 }
 
+//event listener for the next question button -- triggers next question generation
 nextButton.addEventListener("click", function(){
     if(currentQuestionIndex < questions.length){
         handleNextButton();
@@ -274,6 +281,7 @@ nextButton.addEventListener("click", function(){
     }
 });
 
+//event listener for the start quiz button -- starts quiz
 startButton.addEventListener("click", function(){
     console.log("click!");
     startButton.style.display = "none";
@@ -281,13 +289,16 @@ startButton.addEventListener("click", function(){
     startQuiz();
 });
 
+//event listener for score submission -- submits initials and triggers score to save to localstorage
 form.addEventListener("submit", function(event){
     event.preventDefault();
 
     saveScore();
 });
 
+//highscore button event listener
 highscoresEl.addEventListener("click", viewHighscores);
 
+//even listeners for restart buttons
 restartButton.addEventListener("click", returnToStart);
 restartButton2.addEventListener("click", returnToStart);
